@@ -1,8 +1,11 @@
 package com.gamecode.recyclapp.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.gamecode.recyclapp.data.model.Post;
+import com.gamecode.recyclapp.ui.NewPost;
+import com.gamecode.recyclapp.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -62,8 +65,10 @@ public class HomePage extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(HomePage.this, NewPost.class);
+                startActivity(intent);
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
     }
