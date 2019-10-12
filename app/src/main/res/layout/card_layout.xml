@@ -44,7 +44,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:textAlignment="viewStart"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -54,7 +54,8 @@
                 android:layout_marginTop="5dp"
 
                 android:layout_weight="1"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
