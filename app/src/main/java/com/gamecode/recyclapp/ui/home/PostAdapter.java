@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.gamecode.recyclapp.R;
 import com.gamecode.recyclapp.data.model.Post;
 
@@ -80,6 +81,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         Glide.with((Activity)holder.view.getContext())
                 .load(mDataset.get(position).getUsernameImg())
                 .centerCrop()
+                .apply(RequestOptions.circleCropTransform())
                 .into(holder.perfil);
        // Glide.with(holder.perfil).load(mDataset.get(position).getUsernameImg());
 
