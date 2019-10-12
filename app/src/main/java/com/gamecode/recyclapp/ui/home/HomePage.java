@@ -7,6 +7,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -102,4 +103,16 @@ public class HomePage extends AppCompatActivity {
 
     }
 
+    public String getStringFromMail(String mail) {
+        String substr = "";
+        char[] arrayMail = mail.toCharArray();
+        for (int i = 0; i < mail.length(); i++)
+        {
+            if (arrayMail[i] != '@')
+                substr += arrayMail[i];
+            else
+                break;
+        }
+        return substr;
+    }
 }

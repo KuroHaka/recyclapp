@@ -24,12 +24,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView textView;
+        public TextView userName;
         public ImageView perfil;
         public ImageView postImg;
 
         public MyViewHolder(LinearLayout v) {
             super(v);
-            textView = v.findViewById(R.id.textView);
+            textView = v.findViewById(R.id.Ttle);
             perfil = v.findViewById(R.id.imageView2);
             postImg = v.findViewById(R.id.imageView);
         }
