@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "619028456973",
+    "firebase_url": "https://recyclapp-b4be8.firebaseio.com",
+    "project_id": "recyclapp-b4be8",
+    "storage_bucket": "recyclapp-b4be8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619028456973:android:3fb8ab7b845870de5b5744",
+        "android_client_info": {
+          "package_name": "com.gamecode.recyclapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619028456973-prnbhempsuh66l7jgfdaqu53andl51kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIEc3PWK79L-5F3dEIvUPbARpo80qhrc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619028456973-prnbhempsuh66l7jgfdaqu53andl51kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
