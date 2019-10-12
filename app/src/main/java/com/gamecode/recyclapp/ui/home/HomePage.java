@@ -1,10 +1,8 @@
 package com.gamecode.recyclapp.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.gamecode.recyclapp.data.model.Post;
-import com.gamecode.recyclapp.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -18,8 +16,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.gamecode.recyclapp.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,18 +32,6 @@ public class HomePage extends AppCompatActivity {
     RecyclerView recyclerView;
     PostAdapter mAdapter;
     private DatabaseReference mDatabase;
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-
-    FirebaseAuth.AuthStateListener authStateListener = new FirebaseAuth.AuthStateListener() {
-        @Override
-        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-            FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-            if (firebaseUser == null) {
-                Intent intent = new Intent(HomePage.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +69,6 @@ public class HomePage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //Ian line code
-        firebaseAuth.addAuthStateListener(authStateListener);
-
         fetchPosts();
     }
 
@@ -97,15 +79,15 @@ public class HomePage extends AppCompatActivity {
         mPostReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String, Post> postMap = dataSnapshot.getValue(Map.class);
-                List<Post> posts = new ArrayList<>(postMap.values());
+                List<HashMap<String, String>> posts = (List<HashMap<String, String>>) dataSnapshot.getValue();
 
-                List<String> stringList = new ArrayList<>();
+                List<Post> postList = new ArrayList<>();
                 for (int i = 0; i < posts.size(); i++) {
-                    stringList.add(posts.get(i).getTitle());
+                    Post post = new Post(posts.get(i));
+                    postList.add(post);
                 }
 
-                mAdapter.setDataSet(stringList);
+                mAdapter.setDataSet(postList);
             }
 
             @Override
@@ -115,10 +97,9 @@ public class HomePage extends AppCompatActivity {
         });
     }
 
-    //Ian Code
-    @Override
-    protected void onStop() {
-        super.onStop();
-        firebaseAuth.removeAuthStateListener(authStateListener);
+    private void storePost(Post post) {
+
+
     }
+
 }
