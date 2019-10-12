@@ -18,7 +18,7 @@ import com.gamecode.recyclapp.R;
 
 public class NewPost extends AppCompatActivity {
 
-    ImageView imagen = (ImageView) findViewById(R.id.imagenId);
+    ImageView imagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,7 @@ public class NewPost extends AppCompatActivity {
         setContentView(R.layout.activity_new_post);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        imagen = (ImageView) findViewById(R.id.imagenId);
     }
 
     public void onclicK(View view) {

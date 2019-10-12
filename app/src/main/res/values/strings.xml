@@ -26,5 +26,6 @@
     <string name="button">Button</string>
     <string name="todo">TODO</string>
     <string name="publish">PUBLISH</string>
+    <string name="title_activity_search_results">SearchResults</string>
 
 </resources>
