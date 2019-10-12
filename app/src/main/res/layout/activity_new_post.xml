@@ -28,13 +28,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="90dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:text="@string/title"
                     android:textColor="@color/colorAlmostWhite"
@@ -46,10 +47,10 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/type_here"
+                        android:layout_width="244dp"
+                        android:layout_height="56dp"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:hint="@string/type_here"
                         android:textColor="@color/colorAlmostWhite" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,9 +74,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:layout_height="192dp"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_height="260dp"
                     android:hint="@string/type_here"
                     android:textColorHint="@color/colorBlack" />
 
