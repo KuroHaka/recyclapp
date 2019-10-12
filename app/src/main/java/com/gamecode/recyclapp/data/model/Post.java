@@ -1,5 +1,11 @@
 package com.gamecode.recyclapp.data.model;
 
+import android.view.ContextThemeWrapper;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.gamecode.recyclapp.ui.home.HomePage;
+
 import java.util.HashMap;
 
 public class Post {
@@ -10,10 +16,10 @@ public class Post {
     private String usernameImg;
 
     public Post(HashMap<String, String> map) {
-        this.title = map.get("title");
         this.image = map.get("image");
         this.username = map.get("username");
         this.usernameImg = map.get("usernameImg");
+        this.title = map.get("title");
     }
 
     public String getTitle() {

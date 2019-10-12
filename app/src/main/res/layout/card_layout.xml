@@ -38,7 +38,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Ttle"
+                android:id="@+id/Title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"

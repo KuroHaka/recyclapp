@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity
     private EditText passwordEditText;
     private Button loginButton;
     private Button signUp;
+    private String mail;
 
     private static final String TAG = "LoginActivity";
 
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity
             FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
             if (firebaseUser != null) {
                 Intent intent = new Intent(LoginActivity.this, HomePage.class);
+                intent.putExtra("Mail", mail);
                 startActivity(intent);
                 finish();
             }
