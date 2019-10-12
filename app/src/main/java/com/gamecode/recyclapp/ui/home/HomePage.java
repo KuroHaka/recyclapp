@@ -33,6 +33,7 @@ public class HomePage extends AppCompatActivity {
     RecyclerView recyclerView;
     PostAdapter mAdapter;
     private DatabaseReference mDatabase;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //username
         recyclerView = findViewById(R.id.reciclerView);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
