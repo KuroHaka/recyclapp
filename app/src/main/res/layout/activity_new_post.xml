@@ -41,7 +41,7 @@
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:text="@string/title"
                     android:textColor="@color/colorAlmostWhite"
-                    android:textSize="30sp"
+                    android:textSize="30dp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
