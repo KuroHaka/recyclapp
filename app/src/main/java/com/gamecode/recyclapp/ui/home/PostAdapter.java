@@ -31,8 +31,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         public MyViewHolder(LinearLayout v) {
             super(v);
             textView = v.findViewById(R.id.Ttle);
-            perfil = v.findViewById(R.id.imageView2);
-            postImg = v.findViewById(R.id.imageView);
+            perfil = v.findViewById(R.id.profilePic);
+            postImg = v.findViewById(R.id.PostPic);
         }
     }
 
