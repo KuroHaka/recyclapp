@@ -38,7 +38,7 @@
         android:layout_marginTop="65dp"
         android:layout_marginRight="25dp"
         android:drawableRight="@android:drawable/ic_menu_search"
-        android:text="@string/search"
+        android:text="What do you want to recycle?"
         android:textAlignment="center"></Button>
 
     <androidx.recyclerview.widget.RecyclerView
