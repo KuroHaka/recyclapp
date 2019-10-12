@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -78,15 +79,15 @@ public class HomePage extends AppCompatActivity {
         mPostReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String, Post> postMap = dataSnapshot.getValue(Map.class);
-                List<Post> posts = new ArrayList<>(postMap.values());
+                List<HashMap<String, String>> posts = (List<HashMap<String, String>>) dataSnapshot.getValue();
 
-                List<String> stringList = new ArrayList<>();
+                List<Post> postList = new ArrayList<>();
                 for (int i = 0; i < posts.size(); i++) {
-                    stringList.add(posts.get(i).getTitle());
+                    Post post = new Post(posts.get(i));
+                    postList.add(post);
                 }
 
-                mAdapter.setDataSet(stringList);
+                mAdapter.setDataSet(postList);
             }
 
             @Override
@@ -94,6 +95,11 @@ public class HomePage extends AppCompatActivity {
                 Log.w("", "loadPost:onCancelled", databaseError.toException());
             }
         });
+    }
+
+    private void storePost(Post post) {
+
+
     }
 
 }

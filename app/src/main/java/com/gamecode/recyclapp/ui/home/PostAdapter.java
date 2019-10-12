@@ -9,11 +9,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gamecode.recyclapp.R;
+import com.gamecode.recyclapp.data.model.Post;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
-    private List<String> mDataset;
+
+    private List<Post> mDataset = new ArrayList<>();
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -36,7 +39,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public PostAdapter() {
     }
 
-    public void setDataSet(List<String> dataSet) {
+    public void setDataSet(List<Post> dataSet) {
         this.mDataset = dataSet;
         notifyDataSetChanged();
     }
@@ -57,7 +60,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(mDataset.get(position));
+        holder.textView.setText(mDataset.get(position).getTitle());
 
     }
 
