@@ -22,5 +22,9 @@
     <string name="image">Image</string>
     <string name="upload_image">Upload image</string>
     <string name="title_activity_search">Search</string>
+    <string name="uploadImage">Upload Image</string>
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
+    <string name="publish">PUBLISH</string>
 
 </resources>

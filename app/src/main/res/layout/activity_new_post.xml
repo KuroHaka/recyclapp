@@ -47,6 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/type_here"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/colorBlack" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,6 +61,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="24sp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -68,6 +71,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_height="260dp"
                     android:hint="@string/type_here"
                     android:textColorHint="@color/colorBlack" />
@@ -81,8 +86,9 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="143dp"
+                    android:layout_width="154dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_weight="1"
                     android:text="@string/image"
                     android:textAlignment="center"
@@ -93,6 +99,7 @@
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="238dp"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/tags"
@@ -109,14 +116,17 @@
 
                 <ImageView
                     android:id="@+id/imagenId"
-                    android:layout_width="wrap_content"
+                    android:layout_width="46dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_weight="1"
+                    android:contentDescription="@string/todo"
                     app:srcCompat="@android:drawable/ic_menu_upload" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="127dp"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:layout_weight="1">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -130,11 +140,29 @@
 
             <Button
                 android:id="@+id/button11"
-                android:layout_width="154dp"
-                android:layout_height="wrap_content"
+                android:layout_width="146dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
+                android:background="@color/colorDarkGrey"
                 android:onClick="onclicK"
-                android:text="Upload Image" />
+                android:text="@string/uploadImage"
+                android:textColor="@color/colorLightGreen" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="29dp" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorDarkGreen"
+                android:text="@string/publish"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
