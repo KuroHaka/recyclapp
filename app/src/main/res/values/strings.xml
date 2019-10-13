@@ -37,5 +37,9 @@
     <string name="bulb">Bulb</string>
     <string name="jar">Jar</string>
     <string name="name">Name</string>
+    <string name="bottle">BOTTLE</string>
+    <string name="carton">CARTON</string>
+    <string name="coffe_capsules">CAPSULES</string>
+    <string name="bulbs">BULBS</string>
 
 </resources>

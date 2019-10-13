@@ -40,7 +40,7 @@
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
                     android:text="@string/title"
                     android:textColor="@color/colorAlmostWhite"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +50,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="244dp"
                         android:layout_height="56dp"
-                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginEnd="@dimen/activity_horizontal_margin"
                         android:hint="@string/type_here"
                         android:textColor="@color/colorAlmostWhite" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -79,6 +79,8 @@
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:hint="@string/type_here"
+                    android:lines="5"
+                    android:textAlignment="viewStart"
                     android:textColorHint="@color/colorBlack" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +94,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="154dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_weight="1"
                     android:text="@string/image"
                     android:textAlignment="center"
@@ -104,7 +106,7 @@
                     android:id="@+id/textView9"
                     android:layout_width="238dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
                     android:layout_weight="1"
                     android:text="@string/tags"
                     android:textAlignment="center"
@@ -122,31 +124,75 @@
                     android:id="@+id/imagenId"
                     android:layout_width="46dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_weight="1"
                     android:contentDescription="@string/todo"
                     app:srcCompat="@android:drawable/ic_menu_upload" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="127dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_height="127dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_weight="1">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="106dp"
-                        android:hint="@string/type_here" />
 
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/can" />
+
+                            <Button
+                                android:id="@+id/button6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/jar" />
+
+                            <Button
+                                android:id="@+id/button2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bottle" />
+
+                            <Button
+                                android:id="@+id/button3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bulbs" />
+
+                            <Button
+                                android:id="@+id/button4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/coffe_capsules" />
+
+                            <Button
+                                android:id="@+id/button5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/carton" />
+                        </LinearLayout>
+                    </ScrollView>
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/button11"
-                android:layout_width="122dp"
+                android:layout_width="147dp"
                 android:layout_height="0dp"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
                 android:background="@color/colorAlmostWhite"
                 android:onClick="onclicK"
@@ -158,7 +204,7 @@
                 android:layout_height="29dp" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/publish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
