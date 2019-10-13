@@ -14,12 +14,14 @@ public class Post {
     private String image;
     private String username;
     private String usernameImg;
+    private String tag;
 
     public Post(HashMap<String, String> map) {
         this.image = map.get("image");
         this.username = map.get("username");
         this.usernameImg = map.get("usernameImg");
         this.title = map.get("title");
+        this.tag = map.get("tag");
     }
 
     public String getTitle() {
@@ -52,5 +54,13 @@ public class Post {
 
     public void setUsernameImg(String usernameImg) {
         this.usernameImg = usernameImg;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

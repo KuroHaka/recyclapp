@@ -3,6 +3,7 @@ package com.gamecode.recyclapp.ui.home;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.gamecode.recyclapp.Tags;
 import com.gamecode.recyclapp.data.model.Post;
 import com.gamecode.recyclapp.ui.NewPost;
 import com.gamecode.recyclapp.ui.login.LoginActivity;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.gamecode.recyclapp.R;
 import com.google.firebase.database.DataSnapshot;
@@ -38,6 +40,8 @@ public class HomePage extends AppCompatActivity {
     private DatabaseReference mDatabase;
     String username;
 
+    private Button serchBut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class HomePage extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //username
+        serchBut = findViewById(R.id.serchBut);
         recyclerView = findViewById(R.id.reciclerView);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -69,6 +74,14 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
+            }
+        });
+
+        serchBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, Tags.class);
+                startActivity(intent);
             }
         });
     }
