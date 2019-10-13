@@ -18,7 +18,6 @@
             android:name=".SearchResults"
             android:label="@string/title_activity_search_results"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Serch" />
         <activity
             android:name=".ui.NewPost"
             android:label="@string/title_activity_new_post"

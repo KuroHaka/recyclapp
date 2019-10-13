@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.gamecode.recyclapp.PostViwer;
+import com.gamecode.recyclapp.Tags;
 import com.gamecode.recyclapp.data.model.Post;
 import com.gamecode.recyclapp.ui.NewPost;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -46,7 +47,7 @@ public class HomePage extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //username
         recyclerView = findViewById(R.id.reciclerView);
-
+        serchBut = findViewById(R.id.serchBut);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         // use this setting to improve performance if you know that changes
