@@ -24,9 +24,10 @@ public class NewPost extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
+        imagen = findViewById(R.id.imagenId);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imagen = (ImageView) findViewById(R.id.imagenId);
+        imagen = findViewById(R.id.imagenId);
     }
 
     public void onclicK(View view) {

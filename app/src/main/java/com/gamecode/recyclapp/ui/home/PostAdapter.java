@@ -20,7 +20,12 @@ import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
 
+    public interface OnItemClickListener {
+        void onItemClick(Post post);
+    }
+
     private List<Post> mDataset = new ArrayList<>();
+    private OnItemClickListener listener;
     private View view;
 
     // Provide a reference to the views for each data item
@@ -54,6 +59,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         notifyDataSetChanged();
     }
 
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
     // Create new views (invoked by the layout manager)
     @Override
     public PostAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
@@ -67,25 +76,31 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.title.setText(mDataset.get(position).getTitle());
 
-        Glide.with((Activity) holder.view.getContext())
+        holder.userName.setText(mDataset.get(position).getUsername());
+
+        Glide.with(holder.view)
                 .load(mDataset.get(position).getImage())
                 .centerCrop()
                 .into(holder.postImg);
 
-        Glide.with((Activity)holder.view.getContext())
+        Glide.with(holder.view)
                 .load(mDataset.get(position).getUsernameImg())
                 .centerCrop()
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.perfil);
-       // Glide.with(holder.perfil).load(mDataset.get(position).getUsernameImg());
 
-
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(mDataset.get(position));
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

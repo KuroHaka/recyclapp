@@ -6,18 +6,29 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.gamecode.recyclapp.ui.home.HomePage;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Post {
+public class Post implements Serializable {
 
     private String title;
     private String image;
     private String username;
     private String usernameImg;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Post(HashMap<String, String> map) {
         this.image = map.get("image");
         this.username = map.get("username");
+        this.description = map.get("txt");
         this.usernameImg = map.get("usernameImg");
         this.title = map.get("title");
     }
