@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.gamecode.recyclapp.R;
 import com.google.firebase.database.DataSnapshot;
@@ -35,16 +36,15 @@ public class HomePage extends AppCompatActivity {
     private DatabaseReference mDatabase;
     String username;
 
+    private Button serchBut;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Intent i = getIntent();
-        username = i.getStringExtra("Mail");
-        username = getStringFromMail(username);
+        //username
         recyclerView = findViewById(R.id.reciclerView);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -81,6 +81,14 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
+            }
+        });
+
+        serchBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, Tags.class);
+                startActivity(intent);
             }
         });
     }

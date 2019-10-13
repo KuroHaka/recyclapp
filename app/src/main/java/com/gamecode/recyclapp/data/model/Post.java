@@ -24,6 +24,7 @@ public class Post implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+    private String tag;
 
     public Post(HashMap<String, String> map) {
         this.image = map.get("image");
@@ -31,6 +32,7 @@ public class Post implements Serializable {
         this.description = map.get("txt");
         this.usernameImg = map.get("usernameImg");
         this.title = map.get("title");
+        this.tag = map.get("tag");
     }
 
     public String getTitle() {
@@ -63,5 +65,13 @@ public class Post implements Serializable {
 
     public void setUsernameImg(String usernameImg) {
         this.usernameImg = usernameImg;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

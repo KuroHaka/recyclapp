@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PostViwer"></activity>
         <activity
+            android:name=".Tags"
+            android:label="@string/title_activity_tags"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".SearchResults"
             android:label="@string/title_activity_search_results"
             android:theme="@style/AppTheme.NoActionBar" />
