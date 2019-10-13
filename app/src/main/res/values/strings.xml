@@ -30,5 +30,12 @@
     <string name="title_activity_search_results">SearchResults</string>
     <string name="search">Search</string>
     <string name="title_activity_tags">Tags</string>
+    <string name="can">Can</string>
+    <string name="paper">Paper</string>
+    <string name="glass">Glass</string>
+    <string name="plastic">Plastic</string>
+    <string name="bulb">Bulb</string>
+    <string name="jar">Jar</string>
+    <string name="name">Name</string>
 
 </resources>
